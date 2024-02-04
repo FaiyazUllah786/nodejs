@@ -8,3 +8,11 @@ figlet('This is fist NPM module23479', function (err, data) {
     }
     console.log(data)
 })
+
+//install a node package using command -
+
+//npm i figlet
+
+//import package 
+
+//simply use it 
