@@ -17,10 +17,24 @@ app.get('/home', (req, res) => {
 
 //routes
 
-app.get('/course/:id', (req, res) => {
-    var param = req.params
-    res.send("contact us at faiyaz.com")
-    console.log(param)
+let courses = [
+    { id: 1, name: "javascript" },
+    { id: 2, name: "java" },
+    { id: 3, name: "python" },
+]
+
+// app.get('/course/:id', (req, res) => {
+//     var param = req.params
+//     res.send("contact us at faiyaz.com")
+//     console.log(param)
+// })
+
+app.get('/course/:name', (req, res) => {
+    let course = courses.find(courses => courses.name === req.params.name)
+
+    if (!course) res.status(400).send("Course you're looking for not available")
+
+    res.send(course)
 })
 
 //either dynamic port is present or use local port
