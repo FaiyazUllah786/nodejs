@@ -1,8 +1,21 @@
 const express = require('express')
 
+const morgan = require('morgan')
+
 const app = express()
 
+
+const customMiddleWares = require('../middle_wares/middle.js')
+
 app.use(express.json())
+
+app.use(customMiddleWares.myMiddleWare1)
+
+app.use(customMiddleWares.myMiddleWare2)
+
+//third party middleware eg- morgan gives information of every req,res
+
+app.use(morgan())
 
 app.get('/', (req, res) => {
     res.send("Hello world!!!")
