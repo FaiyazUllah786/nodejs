@@ -2,3 +2,5 @@ nodejs/npm_learn/node_modules
 nodejs/express/node_modules
 nodejs/crud(mongoDB)/node_modules
 nodejs/crud(mongoDB)/.env
+nodejs/project/node_modules
+nodejs/project/.env
